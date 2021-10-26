@@ -1,0 +1,59 @@
+{
+    "name": "ivansotelo/laravel-twilio-proxy",
+    "description": "Twilio Proxy simplifies the task of masking the communications between two parties (aka masked phone numbers or masked calling). Proxy automatically provides a number and associates two numbers together in order to forward messages and calls back and forth.",
+    "keywords": [
+        "ivansotelo",
+        "laravel-twilio-proxy"
+    ],
+    "homepage": "https://github.com/IvanSotelo/laravel-twilio-proxy",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": ":Ivan Sotelo",
+            "email": "isotelo@controlla.com.mx",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "spatie/laravel-package-tools": "^1.4.3",
+        "illuminate/contracts": "^8.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.13",
+        "phpunit/phpunit": "^9.3",
+        "spatie/laravel-ray": "^1.9",
+        "vimeo/psalm": "^4.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "IvanSotelo\\LaravelTwilioProxy\\": "src",
+            "IvanSotelo\\LaravelTwilioProxy\\Database\\Factories\\": "database/factories"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "IvanSotelo\\LaravelTwilioProxy\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "psalm": "vendor/bin/psalm",
+        "test": "vendor/bin/phpunit --colors=always",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "IvanSotelo\\LaravelTwilioProxy\\LaravelTwilioProxyServiceProvider"
+            ],
+            "aliases": {
+                "laravel-twilio-proxy": "IvanSotelo\\LaravelTwilioProxy\\LaravelTwilioProxyFacade"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
